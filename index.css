@@ -1105,10 +1105,10 @@ width: 60%;
     
             .butt {
                 position: absolute;
-                left: 30.5PX;
-                top: 2500PX;
+                left: -15px;
+                top: 2490PX;
                 width: 100px;
-                height: 20PX;
+                height: 25PX;
                 border: 0PX;
                 font-size: small;
             }
