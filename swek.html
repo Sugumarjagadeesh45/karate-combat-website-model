@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skew on Mouse Move</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        div {
+            width: 150px;
+            height: 100px;
+            background-color: lightgreen;
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Skew on Mouse Move</h1>
+
+    <div class="skew-box">Move Me</div>
+    <div class="skew-box">Move Me</div>
+    <div class="skew-box">Move Me</div>
+
+    <script>
+        document.querySelectorAll(".skew-box").forEach(box => {
+            box.addEventListener("mousemove", (event) => {
+                const rect = box.getBoundingClientRect();
+                const x = event.clientX - rect.left; // Mouse X position inside the div
+                const y = event.clientY - rect.top;  // Mouse Y position inside the div
+                const xSkew = (x / rect.width - 0.5) * 30; // Skew based on X movement
+                const ySkew = (y / rect.height - 0.5) * 30; // Skew based on Y movement
+
+                box.style.transform = `skew(${xSkew}deg, ${ySkew}deg)`;
+            });
+
+            box.addEventListener("mouseleave", () => {
+                box.style.transform = "skew(0deg, 0deg)"; // Reset skew when mouse leaves
+            });
+        });
+    </script>
+
+</body>
+
+</html>
