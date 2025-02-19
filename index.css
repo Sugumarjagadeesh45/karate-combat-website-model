@@ -91,9 +91,9 @@ margin: 30px;
 }
 .butt{
     position: absolute;
-    left: 250.5PX;
+    left: 230.5PX;
     top: 1865PX;
-    width: 130px;
+    width: 260px;
     height: 35PX;
     border: 0PX;
 }
@@ -104,9 +104,9 @@ margin: 30px;
 .sub_but{
     position: relative;
     top: -315PX;
-    right: -160PX;
+    right: -110PX;
     height: 60PX;
-    width: 210PX;
+    width: 280PX;
     border-radius: 15PX;
     border: 0PX;
     font-size: x-large;
